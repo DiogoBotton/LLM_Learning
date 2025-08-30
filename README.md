@@ -1,2 +1,36 @@
 # LLM_Learning
 Repositório com a finalidade de estudar Large Language Models (LLMs) - Grandes Modelos de Linguagem.
+
+### LLM com Hugging Face
+
+Hugging Face é um repositório de código aberto que oferece modelos, datasets e ferramentas.
+
+É especialmente conhecido por sua biblioteca Transformers, projetada para aplicações de PLN (Processamento de Linguagem Natural).
+
+Além da biblioteca Transformers, há milhares de modelos de linguagem disponíveis gratuitamente no Hugging Face. Se destacou como um ator principal no ecossistema de LLMs oferecendo uma plataforma e ferramentas de código aberto que simplificam a utilização desses modelos.
+
+#### Tipos de modelos
+
+Ao navegar pelos repositórios de modelos de IA Generativa (como o Hugging Face) observará modelos listados com os sufixos *'instruct'* ou *'chat'*. É importante conhecer essas terminologias, pois terá resultados diferentes de acordo com os tipos de modelos utilizados.
+
+- **Modelos Base (Base Models)** - Modelos base passam apenas pelo pré-treinamento e completam textos com as palavras mais prováveis.
+- **Modelos Ajustados para Instruções (Instruct-tuned)** - Passam por uma etapa adicional de ajustes para instruções, melhorando a capacidade de seguir comandos específicos.
+- **Modelos de Chat (Chat Models)** - Foram ajustados para funcionar em Chat Bots, portanto, podem ser mais apropriados para conversas.
+
+A versão **"Instruct"** foi ajustada para seguir instruções fornecidas. Esses modelos "esperam" ser solicitados para fazer algo.
+- O modelo recebe instruções.
+
+Modelos com o sufixo **"Chat"** foram ajustados para funcionar em chatbots, "esperando" estar envolvidos em uma conversa com diferentes atores.
+- É propriamente um chatbot.
+
+Em contraste, **modelos não ajustados para instruções (modelos base)** simplesmente geram uma saída que continua a partir do prompt.
+- A ideia de simplesmente completar textos.
+- São bons em prever palavras subsequentes.
+- Por exemplo, para a palavra "O céu é", este tipo de modelo provavelmente completará com "azul" porque é a sequência mais comum.
+- Portanto, *seu comportamente reflete essas estatísticas*, não uma falta de inteligência por parte do modelo.
+
+Para criar chatbots, implementar RAG ou usar agentes, use modelos 'instruct' ou 'chat'. Porém, em caso de dúvida, use um modelo 'instruct' para iniciar o teste.
+
+![Tipos de modelos exemplo](readme-imgs/img.png)
+
+Baseado na imagem acima, dois modelos são apresentados: Um modelo base e o outro do tipo instruct. Para ter o comportamento semelhante ao ChatGPT é necessário utilizar o modelo com a terminologia 'instruct'.
