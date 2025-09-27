@@ -34,3 +34,27 @@ Para criar chatbots, implementar RAG ou usar agentes, use modelos 'instruct' ou 
 ![Tipos de modelos exemplo](readme-imgs/img.png)
 
 Baseado na imagem acima, dois modelos são apresentados: Um modelo base e o outro do tipo instruct. Para ter o comportamento semelhante ao ChatGPT é necessário utilizar o modelo com a terminologia 'instruct'.
+
+### LLM com LangChain
+
+Atualmente, LangChain é uma das ferramentas de LLM mais utilizadas.
+
+**Características:**
+- É uma biblioteca de código aberto, projetada para facilitar a integração de LLMs.
+- Lançado em Outubro de 2022.
+- Fornece uma sintaxe unificada que simplifica o uso de LLMs em diferentes contextos, como chatbots, análises de texto e sistemas de perguntas e respostas.
+- Torna mais fácil combinar LLMs com outras ferramentas e serviços (é mais simples que as bibliotecas do HuggingFace).
+- É uma solução muito importante para deixar as LLMs "programáticas" e **criar aplicações próprias**.
+
+#### Componentes do LangChain
+
+![Alguns componentes do LangChain](readme-imgs/langchain.png)
+
+![Principais componentes](readme-imgs/langchain_2.png)
+
+- **Modelos:** Oferece uma interface padrão para interações com uma ampla gama de LLMs.
+- **Prompts:** Ferramentas para simplificar a criação e tratamento de prompts dinâmicos.
+- **Chains (Corrente, Cadeia ou Sequência):** Interface padrão para encadear LLMs em aplicações complexas, permitindo a ligação entre múltiplos modelos ou outros módulos especialidados.
+- **Memória:** Módulos que permitem o gerenciamento e alteração de conversas anteriores, **essencial para chatbots** que precisam **relembrar interações passadas** para **manter a coerência**.
+- **Agentes:** Equipados com um kit de ferramentas abrangente, podem escolher quais ferramentas usar para resolver o problema com base nas informações do usuário.
+- **Índices:** Métodos para organizar documentos (como documentos de texto, PDFs, etc) de forma a facilitar a interação eficaz com LLMs (interação com documentos).
