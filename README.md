@@ -58,3 +58,21 @@ Atualmente, LangChain é uma das ferramentas de LLM mais utilizadas.
 - **Memória:** Módulos que permitem o gerenciamento e alteração de conversas anteriores, **essencial para chatbots** que precisam **relembrar interações passadas** para **manter a coerência**.
 - **Agentes:** Equipados com um kit de ferramentas abrangente, podem escolher quais ferramentas usar para resolver o problema com base nas informações do usuário.
 - **Índices:** Métodos para organizar documentos (como documentos de texto, PDFs, etc) de forma a facilitar a interação eficaz com LLMs (interação com documentos).
+
+#### Chains (Correntes)
+
+Leva o próprio nome da ferramenta.
+
+As chains permitem ligar diversos prompts para construir aplicações complexas, quebrando problemas maiores em partes menores.
+
+Elas funcionam ao **encadear componentes**, onde a saída de um se torna a entrada do próximo, criando uma sequência lógica de operações.
+
+As chains são estáticas (hard-coded), esperando sempre um tipo específico de entrada.
+
+```py
+    chain = prompt | llm | StrOutputParser()
+```
+
+O pipe `|` seria como fosse uma concatenação.
+
+Nesse exemplo acima, o prompt de texto do usuário é enviado como entrada para o modelo (llm) e a saída do modelo é concatenada com a classe StrOutputParser que é utilizada para formatar os resultados. Com isto temos uma corrente.
