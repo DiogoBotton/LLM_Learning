@@ -1,0 +1,7 @@
+langchain
+langchain_community
+langchain-huggingface
+langchainhub
+langchain_chroma
+autoawq
+accelerate
