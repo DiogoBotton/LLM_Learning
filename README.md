@@ -76,3 +76,15 @@ As chains são estáticas (hard-coded), esperando sempre um tipo específico de 
 O pipe `|` seria como fosse uma concatenação.
 
 Nesse exemplo acima, o prompt de texto do usuário é enviado como entrada para o modelo (llm) e a saída do modelo é concatenada com a classe StrOutputParser que é utilizada para formatar os resultados. Com isto temos uma corrente.
+
+A ideia de fazer conexão entre os componentes é a base da linguagem de expressão do Langchain, que é chamada de **LCEL**.
+
+#### LCEL
+
+A Linguagem de Expressão de Langchain (LCEL - LangChain Expression Language), é uma maneira declarativa de encadear os componentes da biblioteca.
+
+É uma abstração de alguns conceitos interessantes do Python em um formato "minimalista" para construir cadeias de componentes LangChain.
+
+Permite um desenvolvimento rápido de chains, pois a sintaxe é bastante prática e flexível (concatenação com o pipe `|`). Além disso, permite incorporar recursos avançados como streaming, assíncrono, execução paralela e muito mais.
+
+![lcel exemplo](readme-imgs/lcel.png)
