@@ -30,3 +30,5 @@ ollama list # para listar todos os mdoelos instalados
 
 ollama rm <nome-do-modelo>
 ```
+
+Também é possível ver os modelos instalados no navegador com o endereço: `http://localhost:11434/api/tags`
