@@ -9,3 +9,16 @@ O Ollama é uma ferramenta para utilizar modelos de LLM em máquina local.
 
 Necessário fazer o download do Ollama no link abaixo:
 [ollama.com](https://ollama.com/)
+
+Modelos disponíveis no Ollama:
+
+- [https://ollama.com/library](https://ollama.com/library)
+
+Sempre antes de utilizar o modelo é necessário baixá-lo com o comando abaixo:
+
+```bash
+ollama run <nome-do-modelo>
+ollama run gemma3:1b
+```
+
+Será realizado o download do modelo caso ainda não esteja baixado. Caso esteja baixado iniciará uma conversa com o modelo dentro da CLI.

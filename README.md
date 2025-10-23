@@ -1,4 +1,5 @@
 # LLM_Learning
+
 Repositório com a finalidade de estudar Large Language Models (LLMs) - Grandes Modelos de Linguagem.
 
 ### LLM com Hugging Face
@@ -11,23 +12,26 @@ Além da biblioteca Transformers, há milhares de modelos de linguagem disponív
 
 #### Tipos de modelos
 
-Ao navegar pelos repositórios de modelos de IA Generativa (como o Hugging Face) observará modelos listados com os sufixos *'instruct'* ou *'chat'*. É importante conhecer essas terminologias, pois terá resultados diferentes de acordo com os tipos de modelos utilizados.
+Ao navegar pelos repositórios de modelos de IA Generativa (como o Hugging Face) observará modelos listados com os sufixos _'instruct'_ ou _'chat'_. É importante conhecer essas terminologias, pois terá resultados diferentes de acordo com os tipos de modelos utilizados.
 
 - **Modelos Base (Base Models)** - Modelos base passam apenas pelo pré-treinamento e completam textos com as palavras mais prováveis.
 - **Modelos Ajustados para Instruções (Instruct-tuned)** - Passam por uma etapa adicional de ajustes para instruções, melhorando a capacidade de seguir comandos específicos.
 - **Modelos de Chat (Chat Models)** - Foram ajustados para funcionar em Chat Bots, portanto, podem ser mais apropriados para conversas.
 
 A versão **"Instruct"** foi ajustada para seguir instruções fornecidas. Esses modelos "esperam" ser solicitados para fazer algo.
+
 - O modelo recebe instruções.
 
 Modelos com o sufixo **"Chat"** foram ajustados para funcionar em chatbots, "esperando" estar envolvidos em uma conversa com diferentes atores.
+
 - É propriamente um chatbot.
 
 Em contraste, **modelos não ajustados para instruções (modelos base)** simplesmente geram uma saída que continua a partir do prompt.
+
 - A ideia de simplesmente completar textos.
 - São bons em prever palavras subsequentes.
 - Por exemplo, para a palavra "O céu é", este tipo de modelo provavelmente completará com "azul" porque é a sequência mais comum.
-- Portanto, *seu comportamente reflete essas estatísticas*, não uma falta de inteligência por parte do modelo.
+- Portanto, _seu comportamente reflete essas estatísticas_, não uma falta de inteligência por parte do modelo.
 
 Para criar chatbots, implementar RAG ou usar agentes, use modelos 'instruct' ou 'chat'. Porém, em caso de dúvida, use um modelo 'instruct' para iniciar o teste.
 
@@ -40,6 +44,7 @@ Baseado na imagem acima, dois modelos são apresentados: Um modelo base e o outr
 Atualmente, LangChain é uma das ferramentas de LLM mais utilizadas.
 
 **Características:**
+
 - É uma biblioteca de código aberto, projetada para facilitar a integração de LLMs.
 - Lançado em Outubro de 2022.
 - Fornece uma sintaxe unificada que simplifica o uso de LLMs em diferentes contextos, como chatbots, análises de texto e sistemas de perguntas e respostas.
@@ -88,3 +93,7 @@ A Linguagem de Expressão de Langchain (LCEL - LangChain Expression Language), �
 Permite um desenvolvimento rápido de chains, pois a sintaxe é bastante prática e flexível (concatenação com o pipe `|`). Além disso, permite incorporar recursos avançados como streaming, assíncrono, execução paralela e muito mais.
 
 ![lcel exemplo](readme-imgs/lcel.png)
+
+### Dicas uteis para liberar espaço do WSL:
+
+- [A Forma Correta de Liberar Espaço no WSL 2](https://www.tabnews.com.br/freitaschz/a-forma-correta-de-liberar-espaco-no-wsl-2)
