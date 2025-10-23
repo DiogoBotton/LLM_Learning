@@ -3,3 +3,5 @@ langchain_community
 langchain-huggingface
 langchainhub
 langchain_chroma
+langchain_ollama
+ollama
