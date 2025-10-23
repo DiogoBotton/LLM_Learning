@@ -22,3 +22,11 @@ ollama run gemma3:1b
 ```
 
 Será realizado o download do modelo caso ainda não esteja baixado. Caso esteja baixado iniciará uma conversa com o modelo dentro da CLI.
+
+Para desinstalar algum modelo da máquina digite
+
+```bash
+ollama list # para listar todos os mdoelos instalados
+
+ollama rm <nome-do-modelo>
+```
