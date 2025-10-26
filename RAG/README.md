@@ -29,6 +29,7 @@ O método típico é converter todos os dados privados em embeddings armazenados
   - Para cada documento é necessário dividir os documentos em partes, pois cada modelo tem seu limite de tokens de entrada (4 mil tokens, 5 mil tokens, etc). Então por conta disso é necessário realizar o "split" (divisão) dos textos de um documento.
 - 3° Conversão dos textos em _embeddings_.
   - Transforma os textos em vetores.
+  - Basicamente, é a transformação dos textos em números, para que dessa forma o algoritimo consiga interpretá-los.
 - 4° No final, temos um vetor de _embeddings_ (base de dados vetorial com todos os documentos armazenados).
 
 Segunda etapa: **Recuperação de dados e geração das respostas (Data Retrieval e Generation)**
@@ -42,3 +43,15 @@ Segunda etapa: **Recuperação de dados e geração das respostas (Data Retrieva
   - No final, esses dados são adicionados no texto final retornado pela LLM.
 
 O LangChain tem vários componentes projetados para ajudar a criar aplicativos de **perguntas e respostas** e aplicativos RAG de modo geral.
+
+## Processo de **Indexação** de documentos
+
+1) **Carregar:** Primeiramente, precisamos carregar nossos dados. No LangChain temos várias funções (chamados de Document Loaders) que facilitam o processo de leitura. Os dados podem ser carregados a partir de arquivos .pdf, planilhas ou mesmo da internet.
+
+2) **Dividir os dados em pequenos pedaços:** Divisores de texto quebram grandes documentos em partes menores, facilitando a indexação quanto a passagem ao modelo, pois partes grandes são mais difíceis de pesquisar (por exemplo, livros inteiros ou documentos com centenas de páginas) e, portanto, é importante realizar a divisão e também por que não cabem na janela de contexto do modelo.
+
+3) **Armazenar:** Precisamos de um local para armazenar e indexar esses pedaços de textos, para que possam ser pesquisados posteriormente. Após o embedding, os dados podem ser armazenados em um banco de dados vetorial (VectorStore) para recuperação posterior.
+
+Existe uma ferramenta chamada *Chroma* (langchain_chroma) para realizar o armazenamento desses dados vetoriais no LangChain (existem várias outras ferramentas e serviços para vector stores e bancos de dados semânticos).
+
+![indexação](readme-imgs/indexacao.png)
