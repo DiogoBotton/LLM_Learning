@@ -55,3 +55,47 @@ O LangChain tem vários componentes projetados para ajudar a criar aplicativos d
 Existe uma ferramenta chamada *Chroma* (langchain_chroma) para realizar o armazenamento desses dados vetoriais no LangChain (existem várias outras ferramentas e serviços para vector stores e bancos de dados semânticos).
 
 ![indexação](readme-imgs/indexacao.png)
+
+4) **Recuperação:** Dada a entrada de um usuário, **as divisões relevantes** são recuperadas do armazenamento usando um retriever (recuperador).
+
+5) **Gerar:** O modelo então produz uma resposta usando um prompt que inclui a pergunta e os dados recuperados.
+
+O modelo receberá como input a pergunta do usuário + o contexto.
+
+A pergunta do usuário gera o prompt juntamente com o texto recuperado da base de dados. Todos esses dados são enviados para a LLM para termos a resposta.
+
+- Isso significa que é possível usar LLMs para processar nossos documentos ou outros recursos como páginas na internet.
+- O LangChain fornece todos os blocos de construção para aplicativos RAG - do simples ao complexo.
+
+### Classes para recuperar os dados (retrieval - recuperação)
+
+- **Document Loaders:** Podem carregar documentos de várias fontes diferentes.
+- **Text Splitting:** O processo de buscar apenas as partes relevantes dos documentos. O LangChain oferece vários algoritmos para dividir documentos em partes menores, que já são otimizados para tipos específicos de documentos.
+- **Text Embedding Models:** Para transformar os textos em vetores.
+- **Vector Stores:** A maneira para armazenarmos os dados. O LangChain integra aproximadamente mais de 50 serviços diferentes, permitindo escolher o mais adequado às necessidades.
+- **Retrievers:** Depois que os dados estão no banco de dados, utilizamos essa classe de algoritmo para recuperar os dados. Fornece métodos simples de busca semântica
+- **Indexing:** A API de indexação do LangChain sincroniza seus dados de qualquer fonte.
+
+**O que é a busca semântica que o Retriever faz?**
+
+A busca semântica é um método de pesquisa que vai além das palavras-chave, focando em entender o significado e a intenção por trás da consulta do usuário.
+
+**Entendendo o Retrieval:**
+
+Para fazer o retrieval (recuperação dos dados) são feitos cálculos de busca por similaridade. A ideia é encontrar documentos que são semelhantes a uma consulta baseada nas representações numéricas.
+
+A busca por similaridade fará a comparação dos vetores numéricos (embeddings) da consulta (pergunta do usuário) e dos documentos para encontrar os mais semelhantes via algoritmo KNN (vizinho mais próximo) ou similaridade cosseno.
+
+Aqueles que tiverem o menor valor de distância são os mais similares e serão retornados para que a LLM gere as respostas.
+
+### Diagrama de um pipeline de RAG para aplicação de perguntas e respostas
+
+A ideia é construir um sistema específico para conseguir responder o que está em um determinado documento.
+
+1) Reunir documentos para complementar o conhecimento base de uma LLM sobre uma determinada área, como políticas internas, documentos financeiros, documentação técnica ou artigos de pesquisa.
+
+2) Usar um vector store (como FAISS, Pinecone ou ChromaDB) para dividir os dados textuais em partes menores e armazena-los em um banco vetorial para que depois seja feita uma busca semântica.
+
+3) Quando um usuário faz uma pergunta, o sistema de recuperação usa o vector store para complementar a pergunta com informações relevantes.
+
+4) O prompt aumentado (pergunta do usuário + os dados de contexto) são enviados para a LLM. Com isso, serão fornecidas respostas mais precisas juntamente com as fontes. Caso existam vários artigos diferentes, é possível retornar de qual artigo as respostas foram extraídas.
